@@ -1,0 +1,97 @@
+// uji create user
+POST http://localhost:5000/users
+Content-Type: application/json
+
+{
+    "name": "Harry Maguire",
+    "email": "harry@admin.com",
+    "password": "1234567",
+    "confirmPassword": "1234567",
+    "role": "user"
+}
+
+###
+// get semua user
+GET http://localhost:5000/users
+
+###
+// get single data
+GET http://localhost:5000/users/(uuiduser)
+
+###
+// update user
+PATCH  http://localhost:5000/users/(uuiduser)
+Content-Type: application/json
+
+{
+    "name": "Lord Harry Maguire",
+    "email": "harry@gmail.com",
+    "password": "",
+    "confirmPassword": "",
+    "role": "user"
+}
+
+###
+// delete user
+DELETE  http://localhost:5000/users/(uuiduser)
+
+
+###
+// test login admin
+POST http://localhost:5000/login
+Content-Type: application/json
+
+{
+    "email": "admin@admin.com",
+    "password": "1234567"
+}
+
+###
+// test login user
+POST http://localhost:5000/login
+Content-Type: application/json
+
+{
+    "email": "gg@gmail.com",
+    "password": "1234567"
+}
+
+
+###
+GET  http://localhost:5000/me
+
+###
+//  Logout
+DELETE  http://localhost:5000/logout
+
+###
+// get all product
+GET  http://localhost:5000/products
+
+###
+// get single product
+GET  http://localhost:5000/products/(uuidproduct)
+
+###
+// create product
+POST http://localhost:5000/products
+Content-Type: application/json
+
+{
+    "name": "Cireng",
+    "price": 10000
+}
+
+###
+// create product
+PATCH http://localhost:5000/products/(uuidproduct)
+Content-Type: application/json
+
+{
+    "name": "Cireng Coy",
+    "price": 13000
+}
+
+###
+// delete product
+DELETE http://localhost:5000/products/(uuidproduct)
